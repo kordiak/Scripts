@@ -1,1 +1,2 @@
 Get-ChildItem | Where-Object {$_.Extension -eq ".png"} | %{.\ffmpeg.exe -i $_.name -vf scale=640:480  -y $_.name }
+Get-ChildItem | Where-Object {$_.Extension -eq ".tmp"} | % { Rename-Item $_.Name $_.BaseName }
