@@ -25,7 +25,7 @@ struct TimeMeasure
         std::forward<decltype(func)>(func)(std::forward<Args>(args)...);
         
         auto duration=std::chrono::duration_cast<TimeT>(std::chrono::steady_clock::now()-start);
-        return static_cast<float>(duration.count())/static_cast<float>(times);
+        return duration.count();
         
     }
     
