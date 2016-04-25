@@ -14,9 +14,18 @@ int main()
 {
     
     
-    int time=TimeMeasure<>::execution(prin,100,20);
+    int time=TimeMeasure<>::execution(prin,10,20);
     
-    std::cout << time;
+    
+    TimeMeasure<> TM;
+    
+    
+    TM.InitLevels(3);
+    
+    
+    
+    TM.Update(time/100.f,0);
+    std::cout << TM.AverageTime(0);
     
     int a;
     std::cin >> a;
